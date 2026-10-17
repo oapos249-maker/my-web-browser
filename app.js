@@ -166,4 +166,4 @@ document.addEventListener('click', (e) => {
 });
 
 // Запуск
-createTab();
+createTab(); 
