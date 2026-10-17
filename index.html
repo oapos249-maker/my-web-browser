@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Browser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <!-- Панель заголовка (для красоты) -->
+    <div class="title-bar">
+        <div class="app-title">My Web Browser</div>
+        <div class="window-controls">
+            <button>─</button><button>□</button><button>✕</button>
+        </div>
+    </div>
+
+    <!-- Панель вкладок -->
+    <div class="tabs-wrapper">
+        <div class="tabs-container" id="tabs-container">
+            <!-- Вкладки создаются в JS -->
+        </div>
+        <button class="new-tab-btn" id="new-tab-btn" title="Новая вкладка">+</button>
+    </div>
+
+    <!-- Панель инструментов -->
+    <div class="toolbar">
+        <button class="nav-btn" id="back-btn" title="Назад">←</button>
+        <button class="nav-btn" id="forward-btn" title="Вперед">→</button>
+        <button class="nav-btn" id="reload-btn" title="Обновить">⟳</button>
+        
+        <input type="text" id="url-bar" placeholder="Введите URL или поисковый запрос..." autocomplete="off">
+        
+        <button class="nav-btn" id="bookmark-btn" title="Добавить в закладки">☆</button>
+        <button class="nav-btn" id="bookmarks-btn" title="Закладки">📁</button>
+        <button class="nav-btn" id="theme-btn" title="Сменить тему">🌙</button>
+    </div>
+
+    <!-- Выпадающее меню закладок -->
+    <div class="bookmarks-dropdown" id="bookmarks-dropdown">
+        <div id="bookmarks-list"></div>
+    </div>
+
+    <!-- Область отображения сайтов -->
+    <div class="webview-container" id="webview-container">
+        <!-- Сюда будут загружаться iframe -->
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
