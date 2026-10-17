@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body data-theme="light">
-    <!-- Панель заголовка (для красоты) -->
     <div class="title-bar">
         <div class="app-title">My Web Browser</div>
         <div class="window-controls">
@@ -15,18 +14,14 @@
         </div>
     </div>
 
-    <!-- Панель вкладок -->
     <div class="tabs-wrapper">
-        <div class="tabs-container" id="tabs-container">
-            <!-- Вкладки создаются в JS -->
-        </div>
+        <div class="tabs-container" id="tabs-container"></div>
         <button class="new-tab-btn" id="new-tab-btn" title="Новая вкладка">+</button>
     </div>
 
-    <!-- Панель инструментов -->
     <div class="toolbar">
-        <button class="nav-btn" id="back-btn" title="Назад">←</button>
-        <button class="nav-btn" id="forward-btn" title="Вперед">→</button>
+        <button class="nav-btn" id="back-btn" title="Назад" disabled>←</button>
+        <button class="nav-btn" id="forward-btn" title="Вперед" disabled>→</button>
         <button class="nav-btn" id="reload-btn" title="Обновить">⟳</button>
         
         <input type="text" id="url-bar" placeholder="Введите URL или поисковый запрос..." autocomplete="off">
@@ -36,14 +31,34 @@
         <button class="nav-btn" id="theme-btn" title="Сменить тему">🌙</button>
     </div>
 
-    <!-- Выпадающее меню закладок -->
     <div class="bookmarks-dropdown" id="bookmarks-dropdown">
         <div id="bookmarks-list"></div>
     </div>
 
-    <!-- Область отображения сайтов -->
-    <div class="webview-container" id="webview-container">
-        <!-- Сюда будут загружаться iframe -->
+    <!-- Область для iframe (сайтов) -->
+    <div class="webview-container" id="webview-container"></div>
+
+    <!-- КРАСИВАЯ СТАРТОВАЯ СТРАНИЦА (Показывается по умолчанию) -->
+    <div class="start-page active" id="start-page">
+        <h1>My Web Browser</h1>
+        <p>Введите адрес в строку сверху или выберите популярный сайт</p>
+        <div class="shortcuts">
+            <div class="shortcut" onclick="openTab('https://yandex.ru')">
+                <div class="icon" style="color: #FC3F1D;">Я</div>Яндекс
+            </div>
+            <div class="shortcut" onclick="openTab('https://github.com')">
+                <div class="icon" style="color: #24292e;">Git</div>GitHub
+            </div>
+            <div class="shortcut" onclick="openTab('https://ru.wikipedia.org')">
+                <div class="icon" style="color: #000;">W</div>Wikipedia
+            </div>
+            <div class="shortcut" onclick="openTab('https://www.bing.com')">
+                <div class="icon" style="color: #008373;">B</div>Bing
+            </div>
+        </div>
+        <div class="warning-box">
+            <b>Внимание:</b> Многие крупные сайты (например, Google или YouTube) запрещают открывать себя внутри других сайтов из-за политики безопасности. Если вы видите ошибку или белый экран, откройте сайт в новой вкладке обычного браузера.
+        </div>
     </div>
 
     <script src="app.js"></script>
